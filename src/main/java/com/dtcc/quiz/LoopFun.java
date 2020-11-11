@@ -8,8 +8,11 @@ public class LoopFun {
      * @return the factorial of the number
      */
     public Integer factorial(Integer number){
-        return null;
-}
+        if ((number == 1) || (number == 0) )
+            return number;
+        else
+            return (number*factorial(number - 1));
+     }
 
     /**
      * Given a phrase, get the acronym of that phrase. Acronym is the combination of
