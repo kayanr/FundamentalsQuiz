@@ -22,7 +22,16 @@ public class LoopFun {
      * @return Upper case string of the first letter of each word
      */
     public String acronym(String phrase) {
-       return null;
+
+        String tempString = "";
+        for(int i=0; i<phrase.length(); i++){
+            if(i==0)
+            tempString = phrase.charAt(i);
+            if(phrase.charAt(i) == " "){
+                tempString = phrase.charAt(i);
+            }
+        }
+        return null;
     }
 
     /**
