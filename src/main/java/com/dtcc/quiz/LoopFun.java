@@ -8,11 +8,17 @@ public class LoopFun {
      * @return the factorial of the number
      */
     public Integer factorial(Integer number){
+        int total = 1;
         if ((number == 1) || (number == 0) )
             return number;
-        else
-            return (number*factorial(number - 1));
-     }
+        else{
+            for(int i = number; i > 0; i--) {
+                total *= (i);
+            }
+            return total;
+        }
+
+    }
 
     /**
      * Given a phrase, get the acronym of that phrase. Acronym is the combination of
@@ -24,14 +30,16 @@ public class LoopFun {
     public String acronym(String phrase) {
 
         String tempString = "";
-        for(int i=0; i<phrase.length(); i++){
-            if(i==0)
-            tempString = phrase.charAt(i);
-            if(phrase.charAt(i) == " "){
-                tempString = phrase.charAt(i);
+        String upperString = "";
+        for(int i = 0; i<phrase.length(); i++){
+            if(i == 0)
+                tempString += phrase.charAt(i);
+            if(phrase.charAt(i) == ' '){
+                tempString += phrase.charAt(i+1);
             }
         }
-        return null;
+        upperString = tempString.toUpperCase();
+        return upperString ;
     }
 
     /**
@@ -47,7 +55,20 @@ public class LoopFun {
      * @return the encrypted string by shifting each character by three character
      */
     public String encrypt(String word) {
-        return null;
+        String encryptStr = "";
+        int aValue;
+
+        for(int i =0; i< word.length(); i++) {
+           if(word.charAt(i) == 'x')
+               encryptStr += 'a';
+           else  if(word.charAt(i) == 'y')
+               encryptStr += 'b';
+           else  if(word.charAt(i) == 'z')
+               encryptStr += 'c';
+           else { aValue = 3 + word.charAt(i);
+                  encryptStr += (char) aValue;}
+        }
+        return encryptStr;
     }
 
 }
